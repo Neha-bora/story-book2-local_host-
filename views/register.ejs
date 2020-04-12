@@ -1,0 +1,40 @@
+ 
+
+<%- include('partials/header') %>
+
+
+<html>
+  <head>
+     
+    <title>NewsLetter Signup</title>
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body class="text-center">
+
+  <% if(message) { %>  
+  <div style = "text-align:center" class="alert alert- <%= message.type %>">
+    <button type= "button" class = "close" data-dismiss= "alert">$times; </button>
+    <strong><%= message.intro %></strong> <%= message.message %>
+  </div>  
+ <% } %>
+
+    <form action="/register" class="form-signin" method="POST">
+  <img class="mb-4 rounded-circle" src="image/butterfly.jpg" alt="" width="100" height="92">
+
+  <h1 class="h3 mb-3 font-weight-normal  ">Welcome to my World</h1>
+  
+
+  <input type="text" name = "name" class="form-control top " placeholder="Enter your name"autocomplete="off" >
+  <input type="email" name = "username" class="form-control middle" placeholder="Enter your email"  autocomplete="off">
+  <input type="password" name = "password" class="form-control bottom" placeholder="Password" autocomplete="off" >
+  
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Register now</button>
+ 
+</form>
+</body>
+   
+</html>
+<%- include('partials/footer') %>

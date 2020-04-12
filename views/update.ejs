@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<center> <h2 class="navbar-brand" > update your story</h2> </center>
+
+<form  action="/update" method="POST">
+     <div class="form-group">
+      <input type="hidden" id="custId" name="id" value="<%=post._id%>">
+       <label>Title</label>
+       <input class="form-control" type="text" name="postTitle"  value="<%=post.title%>">
+       <label>Story</label>
+         
+
+
+       <textarea class="form-control" name="postBody" rows="6" cols="30"> <%=post.story%></textarea>
+     </div>
+
+   
+     <button class="btn btn-primary" type="submit" name="button"> update</button>
+</form>
+
+
+
+<%- include('partials/footer') %>    

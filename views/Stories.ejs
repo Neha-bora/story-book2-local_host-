@@ -1,0 +1,38 @@
+<%- include('partials/header'); %>
+
+<div>
+<% posts.forEach(function(post){ 
+        var date=new Date(parseInt(post.date));
+         var formetedDate=date.toDateString();  
+         %> 
+ 	<div class="card block">
+
+   <div class="card-header">
+   <h3 class = " blackp"><%= post.title %> </h3>
+   </div>
+
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-2">
+
+      <p class ="blackp">
+
+      <%= post.story.substring(0 , 300)+ "..."  %>
+       <a href="/storiesbyName?StoryName=<%=post.title%>">Read_more</a>
+
+      </p>
+
+     <footer class="blockquote-footer">  <%= post.name %></br><%=formetedDate%></footer>
+    
+
+     
+
+    </blockquote>
+ </div>
+</div>
+
+ <% }) %>
+ </div>
+ 
+
+<%- include('partials/footer'); %>
