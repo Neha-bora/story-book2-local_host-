@@ -37,6 +37,10 @@ p{
 
 }
 
+.bg-blue{
+  background: #50a3a2;;
+}
+
 .blackp{
 	color:black;
 	font-weight: 100;
@@ -57,7 +61,8 @@ p{
 
 .navbar{
 
-	padding:0 0 4.5rem;
+  padding:0 0 5.5rem;
+ 
 }
 
 .navbar-brand{
@@ -66,13 +71,14 @@ p{
 	font-weight: 700;
 }
 .nav-item{
-	padding: 0 18px;
+  padding: 0 12px;
+  
 }
 
 .nav-link{
 
 	font-size:1.5rem;
-	
+
 }
 
 

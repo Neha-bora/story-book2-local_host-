@@ -39,13 +39,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-//flash message middleware
-app.use((req , res , next )=>{
-  res.locals.message = req.session.message
-  delete req.session.message
-  next()
 
-});
 
 mongoose.connect(" mongodb://localhost:27017/storyDB", {useNewUrlParser: true , useUnifiedTopology: true});
 mongoose.set('useCreateIndex', true);
@@ -159,7 +153,7 @@ app.get("/compose" , function(req , res){
 });
 
 app.post("/compose" , function( req  , res){
-  console.log(req.user);
+  // console.log(req.user);
 
  const newPost = new Post({
  	title:req.body.postTitle,
@@ -176,20 +170,27 @@ app.post("/compose" , function( req  , res){
 
 });
 
-app.get("/stories" , function(req , res){
+// app.get("/stories" , function(req , res){
 
-  if(req.isAuthenticated()){
+//   if(req.isAuthenticated()){
+//   Post.find({} , function( err , posts){
+//   res.render("stories" , { posts:posts});
+ 
+//       });
+ 
+//    }else{
+//     res.redirect("/login");
+//    }
+ 
+
+// });
+
+app.get("/stories" , function(req , res){
   Post.find({} , function( err , posts){
   res.render("stories" , { posts:posts});
- 
-      });
- 
-   }else{
-    res.redirect("/login");
-   }
- 
-
+    });
 });
+
 
 
 
@@ -209,8 +210,8 @@ app.get("/storiesbyName" , function(req , res){
  	});
 
 });
-//myDashboard
 
+//myDashboard
 app.get("/dashboard" , function(req , res){
   
     if(req.isAuthenticated()){

@@ -1,16 +1,87 @@
 <%- include('partials/header'); %>
 
 
+
+
 <div>
  
-<% var count=0;
+<% 
+ var count=0;
  posts.forEach(function(post){ 
        
         var date=new Date(parseInt(post.date));
          var formetedDate=date.toDateString();  
          %> 
- 	<div class="card block">
+     
 
+         
+<div class="row ">
+  <div class="col-sm-9"> 
+    
+    <div class="card ">
+      <h4 class= "card-header bg-blue  text-white">User info </h4>
+
+      <ul class="list-group"> 
+
+        <li class="list-group-item">
+        <h5 class="text-dark"> <span class=" badge badge-success mr-2">Name: </span><%= post.name %> </h5> 
+        </li>
+    
+        <li class="list-group-item">
+        <h5 class="text-dark">  <span class=" badge badge-success mr-2">Email: </span> </h5>
+        </li>
+    
+        <li class="list-group-item">
+        <span class="badge badge-danger">Customer Area</span>
+        </li>
+    
+        </ul>
+
+
+
+
+
+
+       </div>
+
+ </div>
+       
+
+ <div class="col-sm-3"> 
+  
+   <div classe="card mb-4">
+    <h4 class="card-header  bg-blue  text-white">Setting </h4>
+   
+   
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a class="text-dark" href="/compose">Compose</a>
+      </li>
+      <li class="list-group-item">
+        <a class="text-dark" href="/stories">News feed</a>
+      </li>
+      <li class="list-group-item">
+        <a class="btn btn-dark btn-mm" href="/logout" role="button">Logout!</a>
+      </li>
+      </ul>
+
+    </div>
+
+
+
+ </div>
+
+ 
+
+ </div>
+
+
+
+
+
+
+ 	<div class="card block">
+ 
    <div class="card-header">
    <h3 class = " blackp"><%= post.title %> </h3>
    </div>

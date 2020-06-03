@@ -6,7 +6,7 @@
 <html>
   <head>
      
-    <title>NewsLetter Signup</title>
+    <title>StoryBook Signup</title>
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
@@ -14,12 +14,6 @@
   </head>
   <body class="text-center">
 
-  <% if(message) { %>  
-  <div style = "text-align:center" class="alert alert- <%= message.type %>">
-    <button type= "button" class = "close" data-dismiss= "alert">$times; </button>
-    <strong><%= message.intro %></strong> <%= message.message %>
-  </div>  
- <% } %>
 
     <form action="/register" class="form-signin" method="POST">
   <img class="mb-4 rounded-circle" src="image/butterfly.jpg" alt="" width="100" height="92">
